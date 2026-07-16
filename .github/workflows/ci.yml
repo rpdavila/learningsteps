@@ -18,14 +18,16 @@ jobs:
           python-version: '3.13'
       
       - name: Install dependencies
-        run: pip install -r ./api/requirements.txt
+        run: |
+          pip install -r ./api/requirements.txt
+          pip install ruff pytest
       
       - name: Lint with ruff
         run: ruff check ./api
         continue-on-error: true
       
       - name: Run pytest
-        run: pytest ./api
+        run: python -m pytest ./api
       
       - name: Build Docker image
         run: docker build -t learning-steps:${{ github.sha }} ./api
