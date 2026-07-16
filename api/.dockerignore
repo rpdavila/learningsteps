@@ -1,0 +1,28 @@
+# Python virtual environment
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Git / editor files
+.git/
+.gitignore
+.vscode/
+.idea/
+
+# Local env and secrets
+.env
+.env.*
+!.env-sample
+
+# Docker / build caches
+.dockerignore
+Dockerfile
+docker-compose.yaml
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
