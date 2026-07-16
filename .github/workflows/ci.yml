@@ -30,7 +30,7 @@ jobs:
         run: python -m pytest ./api
       
       - name: Build Docker image
-        run: docker build -t learning-steps:${{ github.sha }} ./learningsteps
+        run: docker build -f ./Dockerfile -t learning-steps:${{ github.sha }} .
 
   secrets-scan:
     runs-on: ubuntu-latest
